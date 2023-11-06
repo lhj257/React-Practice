@@ -1,3 +1,11 @@
+.reactTest {
+  background-color: aquamarine;
+  color: #282c34;
+  font-size: 100px;
+  font-weight: bold;
+  padding: 16px;
+}
+
 .App {
   text-align: center;
 }
