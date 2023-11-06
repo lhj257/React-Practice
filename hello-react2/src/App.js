@@ -67,9 +67,10 @@ function App() {
     <div>
       {/* JSX에서의 기본 주석의 모양 */}
       {/* ide 주석 하고싶다. ctrl +/  보통 자동으로 주석 처리. */}
-      <form>
-        이름 : <br />
-        <input></input>
+      <form className="reactTest">
+        <span>
+          이름 : <input type="text"></input>
+        </span>
       </form>
     </div>
   );

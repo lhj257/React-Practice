@@ -6,6 +6,11 @@
   padding: 16px;
 }
 
+input {
+  height: auto;
+  font-size: 100px;
+}
+
 .App {
   text-align: center;
 }
