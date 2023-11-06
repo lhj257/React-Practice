@@ -1,11 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-hello/node_modules
-# 모든 폴더/node_modules를 제외하기
-**/node_modules
-# 모든 폴더/build를 제외하기
-**/build
+/node_modules
 /.pnp
 .pnp.js
 
