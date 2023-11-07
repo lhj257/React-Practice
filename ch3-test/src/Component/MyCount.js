@@ -9,7 +9,7 @@ const MyCount = () => {
   const [number, setNumber] = useState(0);
   // const [anotherNumber, setAnoterhNumber] = useState(100);
   // useState 의 결과값 타입이 배열
-  // useState(0) : 초깃값 : number = 0
+  // useState(0) : 초기값 : number = 0
   // 첫번째 : 상태값,
   // 두번째 : 세터 함수.
   const onClickUp = () => setNumber(number + 1);
