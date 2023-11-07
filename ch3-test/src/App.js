@@ -35,7 +35,7 @@ function App() {
       {/* props 타입 확인하기. */}
       {/* <MyComp password="1234">이호진 이호진 이호진</MyComp> */}
 
-      {/* 클래스형 컴포넌틀 버전으로 확인하기 */}
+      {/* 클래스형 컴포넌트 버전으로 확인하기 */}
       {/* <MyCompPublicFunction password="1234">
         이호진 이호진 이호진
       </MyCompPublicFunction> */}
