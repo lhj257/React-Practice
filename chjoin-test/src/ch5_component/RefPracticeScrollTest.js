@@ -17,7 +17,7 @@ const RefPracticeScrollTest = () => {
   const StyleBox = styled.div`
     /* 사각형 박스 만들기 */
     border: 1px solid black;
-    height: 300px;
+    height: 350px;
     width: 300px;
     overflow: auto;
     position: relative;
@@ -26,7 +26,7 @@ const RefPracticeScrollTest = () => {
     /* 안쪽, 높이 650 px 를 주어서, 스크롤 붙이기.  */
     width: 100%;
     height: 650px;
-    background: linear-gradient(yellow, black);
+    background: linear-gradient(yellow, blue);
   `;
 
   return (
@@ -41,6 +41,13 @@ const RefPracticeScrollTest = () => {
         onClick={() => (box.current.scrollTop = 350)}
       >
         맨밑으로
+      </Button>
+      <Button
+        title="맨위로"
+        type="primary"
+        onClick={() => (box.current.scrollTop = 0)}
+      >
+        맨위로
       </Button>
     </div>
   );
