@@ -44,6 +44,13 @@ const DataListKeyAddDalTest = () => {
     </li>
   ));
 
+  // 키보드에서 엔터키 입력시, 클릭 이벤트 호출 연결 확인.
+  const onKeyPress = (e) => {
+    if (e.key === "Enter") {
+      onClickText();
+    }
+  };
+
   // 데이터 추가. 배열의 내장 함수 concat 이용.
 
   // text input 부분이 변경시, 세터 함수로 변경사항을 업데이트 함.
@@ -88,7 +95,11 @@ const DataListKeyAddDalTest = () => {
 
   return (
     <div>
-      <input value={inputText} onChange={onChangeText}></input>
+      <input
+        value={inputText}
+        onChange={onChangeText}
+        onKeyPress={onKeyPress}
+      ></input>
       <Button type="primary" onClick={onClickText}>
         추가하기
       </Button>
