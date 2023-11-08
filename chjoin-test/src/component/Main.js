@@ -99,6 +99,14 @@ const Main = () => {
           >
             스크롤 ref 테스트 이동
           </Button>
+          <br />
+          <Button
+            title="list 키 설정의무 확인 및 데이터 추가 삭제"
+            type="dashed"
+            onClick={() => navigate("/listKeyDataAddDel")}
+          >
+            키 설정의무 확인 및 데이터 추가 삭제 이동
+          </Button>
         </Container>
       </div>
     </Wrapper>
