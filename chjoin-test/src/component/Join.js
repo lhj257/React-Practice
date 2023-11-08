@@ -15,7 +15,7 @@ import { useState, useRef } from "react";
 //Avatar, 프로필 이미지 뷰 -> 결과뷰로 사용함.
 //해당 뷰를 클릭해서, 파일 선택 하는 기능 구현
 // 선택 후 결과 화면 보여주기.
-import { Avatar } from "antd";
+import { Avatar, Button } from "antd";
 
 const Join = () => {
   //프로필 이미지 작업
@@ -31,6 +31,7 @@ const Join = () => {
   // 설정하고 싶은 HTML DOM 요소에 가서,
   // 사용법, 설정 ref = {fileInput}
   // 사용은 해당 DOM 요소 접근시 사용.
+  // 설정1
   const fileInput = useRef(null);
 
   //이벤트 핸들러 추가, 사진이 변경시 동작하는 함수
@@ -131,6 +132,8 @@ const Join = () => {
       <Avatar
         src={Image}
         size={200}
+        //적용, 해당 이미지 클릭이 되면,
+        // 밑에 있던, input 요소를 클릭하는 것과 동일 효과.
         onClick={() => fileInput.current.click()}
       />
       <input
@@ -139,6 +142,7 @@ const Join = () => {
         accept="image/jpg, image/png, image/jpeg"
         name="profileImg"
         onChange={onChangeImage}
+        //설정2
         ref={fileInput}
       />
       <h2>이메일 : {email}</h2>
@@ -167,7 +171,9 @@ const Join = () => {
         onKeyPress={onKeyPress}
       />
       <br />
-      <button onClick={onClick}>확인</button>
+      <Button type="primary" onClick={onClick}>
+        회원가입
+      </Button>
     </div>
   );
 };
