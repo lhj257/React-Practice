@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./component/Main";
 import MyCount from "./component/MyCount";
 import { Component } from "react";
+import RefPracticeScrollTest from "./ch5_component/RefPracticeScrollTest";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="join" element={<Join />} />
         {/* 추가, 3장에서 연습했던, MyComp라는 컴포넌트 페이지 이동에 추가해보기 */}
         <Route path="mycount" element={<MyCount />} />
+        <Route path="scrollRefTest" element={<RefPracticeScrollTest />} />
       </Routes>
     </BrowserRouter>
   );

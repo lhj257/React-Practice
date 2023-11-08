@@ -14,6 +14,7 @@ import { Button } from "antd";
 //설치 후, 모듈 가져와서 사용하기.
 import styled from "styled-components";
 import { Component } from "react";
+import RefPracticeScrollTest from "./../ch5_component/RefPracticeScrollTest";
 
 //styled-component 사용해보기
 //예제
@@ -80,12 +81,23 @@ const Main = () => {
           >
             회원가입 이동
           </Button>
+          <br />
+          <br />
           <Button
             title="MyCount 이동"
             type="primary"
             onClick={() => navigate("/mycount")}
           >
             MyCount 이동
+          </Button>
+          <br />
+          <br />
+          <Button
+            title="스크롤 ref 테스트 이동"
+            type="dashed"
+            onClick={() => navigate("/scrollRefTest")}
+          >
+            스크롤 ref 테스트 이동
           </Button>
         </Container>
       </div>
