@@ -133,6 +133,26 @@ const Main = () => {
           >
             useStateTest 테스트
           </Button>
+          <br />
+          <Button
+            title="useEffectTest 테스트 "
+            type="primary"
+            onClick={() => {
+              navigate("/useEffectTest");
+            }}
+          >
+            useEffectTest 테스트
+          </Button>
+          <br />
+          <Button
+            title="useReducerTest 테스트 "
+            type="primary"
+            onClick={() => {
+              navigate("/useReducerTest");
+            }}
+          >
+            useReducerTest 테스트
+          </Button>
         </Container>
       </div>
     </Wrapper>
