@@ -14,6 +14,8 @@ import InfoTestUseState from "./ch8_hooksTest/InfoTestUseState";
 import InfoTestUseEffect from "./ch8_hooksTest/InforTestUseEffect";
 import CountUseReducerTest from "./ch8_hooksTest/CountUseReducerTest";
 import InfoTestUseReducer from "./ch8_hooksTest/InfoTestUseReducer";
+import AverageUseMemoTest from "./ch8_hooksTest/AverageUseMemoTest";
+import AverageUseCallback from "./ch8_hooksTest/AverageUseCallback";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route path="useEffectTest" element={<InfoTestUseEffect />} />
         <Route path="useReducerTest" element={<CountUseReducerTest />} />
         <Route path="useReducerTest2" element={<InfoTestUseReducer />} />
+        <Route path="useMemoTest" element={<AverageUseMemoTest />} />
+        <Route path="useCallbackTest" element={<AverageUseCallback />} />
       </Routes>
     </BrowserRouter>
   );
