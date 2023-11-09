@@ -153,6 +153,16 @@ const Main = () => {
           >
             useReducerTest 테스트
           </Button>
+          <br />
+          <Button
+            title="useReducerTest2 테스트 "
+            type="primary"
+            onClick={() => {
+              navigate("/useReducerTest2");
+            }}
+          >
+            useReducerTest2 테스트
+          </Button>
         </Container>
       </div>
     </Wrapper>
