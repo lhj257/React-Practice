@@ -9,6 +9,8 @@ import MyCount from "./component/MyCount";
 import { Component } from "react";
 import RefPracticeScrollTest from "./ch5_component/RefPracticeScrollTest";
 import DataListKeyAddDalTest from "./ch6_component/DataListKeyAddDalTest";
+import LifeCycleTest from "./ch7_classLifeCycle/LifeCycleTest";
+import InfoTestUseState from "./ch8_hooksTest/InfoTestUseState";
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
     //구성요소는 Routes -> Route 로 구성할 예정.
     <BrowserRouter>
       <Routes>
-        {/* 메인으로 사용할(index-> 주소에서 : /) 페이지를 App 또는 Main.js로 해도됨 */}
+        {/* 메인으로 사용할(index->주소에서 : / ) 페이지를 App 또는 Main.js 로 해도 됨 */}
         <Route index element={<Main />} />
         {/* 주소: http://localhost:3000/join -> 해당 페이지 안내 : element={<이동할 컴포넌트>} */}
         <Route path="join" element={<Join />} />
@@ -25,6 +27,8 @@ function App() {
         <Route path="mycount" element={<MyCount />} />
         <Route path="scrollRefTest" element={<RefPracticeScrollTest />} />
         <Route path="listKeyDataAddDel" element={<DataListKeyAddDalTest />} />
+        <Route path="ClassLifeCycleTest" element={<LifeCycleTest />} />
+        <Route path="useStateTest" element={<InfoTestUseState />} />
       </Routes>
     </BrowserRouter>
   );
