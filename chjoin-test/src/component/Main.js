@@ -213,6 +213,16 @@ const Main = () => {
           >
             customHooksTest
           </Button>
+          <br />
+          <Button
+            title="sassTest 테스트 "
+            type="primary"
+            onClick={() => {
+              navigate("/sassTest");
+            }}
+          >
+            sassTest
+          </Button>
         </Container>
       </div>
     </Wrapper>

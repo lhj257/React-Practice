@@ -19,6 +19,7 @@ import AverageUseCallback from "./ch8_hooksTest/AverageUseCallback";
 import AverageUseRefTest from "./ch8_hooksTest/AverageUseRefTest";
 import AverageUseParamsTest from "./ch8_hooksTest/AverageUseParamsTest";
 import InfoTestCustomHooks from "./ch8_hooksTest/InfoTestCustomHooks";
+import TestSass from "./ch9_component/TestSass";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         {/* useParams test 설정  : path="useParamsTest/:id"*/}
         <Route path="useParamsTest/:id" element={<AverageUseParamsTest />} />
         <Route path="customHooksTest" element={<InfoTestCustomHooks />} />
+        <Route path="sassTest" element={<TestSass />} />
       </Routes>
     </BrowserRouter>
   );
