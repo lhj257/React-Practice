@@ -233,6 +233,16 @@ const Main = () => {
           >
             styledComponentTest
           </Button>
+          <br />
+          <Button
+            title="todomain 미니프로젝트 "
+            type="primary"
+            onClick={() => {
+              navigate("/todomain");
+            }}
+          >
+            todomain 미니프로젝트
+          </Button>
         </Container>
       </div>
     </Wrapper>

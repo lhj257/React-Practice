@@ -21,6 +21,7 @@ import AverageUseParamsTest from "./ch8_hooksTest/AverageUseParamsTest";
 import InfoTestCustomHooks from "./ch8_hooksTest/InfoTestCustomHooks";
 import TestSass from "./ch9_component/TestSass";
 import StyledComponentsTest from "./ch9_component/StyledComponentsTest";
+import TodoMain from "./ch10_TodoTest/TodoMain";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route path="customHooksTest" element={<InfoTestCustomHooks />} />
         <Route path="sassTest" element={<TestSass />} />
         <Route path="styledComponentTest" element={<StyledComponentsTest />} />
+        <Route path="todomain" element={<TodoMain />} />
       </Routes>
     </BrowserRouter>
   );
