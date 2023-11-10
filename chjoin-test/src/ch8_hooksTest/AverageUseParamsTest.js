@@ -3,13 +3,8 @@
 
 //순서1, useParams 설정
 import { Button } from "antd";
-import React, {
-  useCallback,
-  useMemo,
-  useState,
-  useRef,
-  useParams,
-} from "react";
+import React, { useCallback, useMemo, useState, useRef } from "react";
+import { useParams } from "react-router-dom";
 
 //함수1, useRef
 const doAverage = (numbers) => {
