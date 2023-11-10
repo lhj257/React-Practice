@@ -18,6 +18,7 @@ import AverageUseMemoTest from "./ch8_hooksTest/AverageUseMemoTest";
 import AverageUseCallback from "./ch8_hooksTest/AverageUseCallback";
 import AverageUseRefTest from "./ch8_hooksTest/AverageUseRefTest";
 import AverageUseParamsTest from "./ch8_hooksTest/AverageUseParamsTest";
+import InfoTestCustomHooks from "./ch8_hooksTest/InfoTestCustomHooks";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="useRefTest" element={<AverageUseRefTest />} />
         {/* useParams test 설정  : path="useParamsTest/:id"*/}
         <Route path="useParamsTest/:id" element={<AverageUseParamsTest />} />
+        <Route path="customHooksTest" element={<InfoTestCustomHooks />} />
       </Routes>
     </BrowserRouter>
   );
