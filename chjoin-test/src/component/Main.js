@@ -223,6 +223,16 @@ const Main = () => {
           >
             sassTest
           </Button>
+          <br />
+          <Button
+            title="styledComponentTest 테스트 "
+            type="primary"
+            onClick={() => {
+              navigate("/styledComponentTest");
+            }}
+          >
+            styledComponentTest
+          </Button>
         </Container>
       </div>
     </Wrapper>
