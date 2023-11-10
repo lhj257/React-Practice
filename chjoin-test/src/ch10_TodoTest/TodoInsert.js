@@ -34,6 +34,9 @@ const FormButtonCss = styled.button`
   align-items: center;
   cursor: pointer;
   transition: 0.1s background ease-in;
+  &:hover {
+    background: #00ff00;
+  }
 `;
 
 const TodoInsert = () => {
