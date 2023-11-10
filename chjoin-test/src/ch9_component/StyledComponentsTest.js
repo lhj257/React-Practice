@@ -1,6 +1,7 @@
 import React from "react";
 //순서1 import 모듈 가져오기
 import styled, { css } from "styled-components";
+import { AiFillApple } from "react-icons/ai";
 
 const StyledComponentsTest = () => {
   //순서2, 적용하기.styled.요소``(백틱)
@@ -50,6 +51,10 @@ const StyledComponentsTest = () => {
   return (
     <div>
       {/* Box 라는 사용자 정의 컴포넌트에 props 전달 해보기.  */}
+      <h1>
+        test react-icons
+        <AiFillApple />
+      </h1>
       <Box color="red">
         <Button test={true}>hello</Button>
       </Box>
