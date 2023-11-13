@@ -74,6 +74,17 @@ const RemoveCss = styled.div`
   }
 `;
 
+//가상 페이징 처리하는 쿨래스 style-components 추가하기.
+const ListvirtualizedCss = styled.div`
+  /* 각 목록요소가 출력이 될때, 구분선 넣기 */
+  & + & {
+    border-top: 1px solid #dee2e6;
+  }
+  &:nth-child(even) {
+    background: #f8f9fa;
+  }
+`;
+
 // 부모 컴포넌트 TddoList로 부터 전달 받은 속성
 {
   /* <TodoListItem todo={todo} key={todo.id} /> */
@@ -82,7 +93,8 @@ const RemoveCss = styled.div`
 
 //지우는 기능을 하는 함수를 전달 받아서, 사용하기.
 //<TodoListItem todo={todo} key={todo.id} onRemove={onRemove} />
-const TodoListItem = ({ todo, onRemove, onToggle }) => {
+//페이징 처리, 추가부분 style
+const TodoListItem = ({ todo, onRemove, onToggle, style }) => {
   // const text = todo.text
   // const checked = todo.checked
   // const id = todo.id
@@ -98,32 +110,36 @@ const TodoListItem = ({ todo, onRemove, onToggle }) => {
 
     //조건부 랜더링 하기.
     // 도구를 사용하기. classnames 모듈 이용해서, 쉽게 조건부 렌더링 하기.
-    <TodoListItemCSS>
-      {/* cn 이용하면, checkbox라는 속성이 checked의 속성에 의해서 
+
+    //페이징 추가, 기존의 아이템 요소 css 부분을 감싸주기.
+    <ListvirtualizedCss className="TodoListItem-virtualized" style={style}>
+      <TodoListItemCSS>
+        {/* cn 이용하면, checkbox라는 속성이 checked의 속성에 의해서 
       true 이면, className에 등록이 되고,
       false 이면, className에 등록이 안됨 */}
 
-      {/* 체크하는 함수 적용하기 */}
+        {/* 체크하는 함수 적용하기 */}
 
-      <CheckboxCss
-        className={cn("checkbox", { checked })}
-        onClick={() => onToggle(id)}
-      >
-        {/* 체크박스의 상태를 표시하는 checked 변수를 기준으로, 조건이 true: GrCheckboxSelected 사용
+        <CheckboxCss
+          className={cn("checkbox", { checked })}
+          onClick={() => onToggle(id)}
+        >
+          {/* 체크박스의 상태를 표시하는 checked 변수를 기준으로, 조건이 true: GrCheckboxSelected 사용
         조건이 false :GrCheckbox 사용 */}
 
-        {/* 조건부 렌더링 cn 이용해서 하기. */}
-        {checked ? <GrCheckboxSelected /> : <GrCheckbox />}
+          {/* 조건부 렌더링 cn 이용해서 하기. */}
+          {checked ? <GrCheckboxSelected /> : <GrCheckbox />}
 
-        {/* <GrCheckbox /> */}
-        {/* 더미데이터 내용중 text 가져오기 */}
-        {/* <TextCss>샘플 할일</TextCss> */}
-        <TextCss className="text">{text}</TextCss>
-      </CheckboxCss>
-      <RemoveCss onClick={() => onRemove(id)}>
-        <MdRemoveCircleOutline />
-      </RemoveCss>
-    </TodoListItemCSS>
+          {/* <GrCheckbox /> */}
+          {/* 더미데이터 내용중 text 가져오기 */}
+          {/* <TextCss>샘플 할일</TextCss> */}
+          <TextCss className="text">{text}</TextCss>
+        </CheckboxCss>
+        <RemoveCss onClick={() => onRemove(id)}>
+          <MdRemoveCircleOutline />
+        </RemoveCss>
+      </TodoListItemCSS>
+    </ListvirtualizedCss>
   );
 };
 
