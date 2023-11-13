@@ -14,7 +14,11 @@ const TodoListCss = styled.div`
 {
   /* <TodoList todos={todos} onRemove={onRemove} /> */
 }
-const TodoList = ({ todos, onRemove }) => {
+//체크하는 함수를 전달 받아서, 사용하기.
+{
+  /* <TodoList todos={todos} onToggle={onToggle} /> */
+}
+const TodoList = ({ todos, onRemove, onToggle }) => {
   return (
     <TodoListCss>
       {/* 부모에서 전달받은 데이터를 사용해보기 */}
@@ -24,7 +28,12 @@ const TodoList = ({ todos, onRemove }) => {
         // 목록요소가 출력시 반드시, key 명시해야함, 그래야 오류가 없고, 속도빠름.
 
         //TodoMain -> TodoList -> TodoListItem 에게, 지우는 기능의 함수를 전달.
-        <TodoListItem todo={todo} key={todo.id} onRemove={onRemove} />
+        <TodoListItem
+          todo={todo}
+          key={todo.id}
+          onRemove={onRemove}
+          onToggle={onToggle}
+        />
       ))}
       {/* <TodoListItem />
       <TodoListItem />

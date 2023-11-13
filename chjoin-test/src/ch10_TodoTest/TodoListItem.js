@@ -82,7 +82,7 @@ const RemoveCss = styled.div`
 
 //지우는 기능을 하는 함수를 전달 받아서, 사용하기.
 //<TodoListItem todo={todo} key={todo.id} onRemove={onRemove} />
-const TodoListItem = ({ todo, onRemove }) => {
+const TodoListItem = ({ todo, onRemove, onToggle }) => {
   // const text = todo.text
   // const checked = todo.checked
   // const id = todo.id
@@ -102,7 +102,13 @@ const TodoListItem = ({ todo, onRemove }) => {
       {/* cn 이용하면, checkbox라는 속성이 checked의 속성에 의해서 
       true 이면, className에 등록이 되고,
       false 이면, className에 등록이 안됨 */}
-      <CheckboxCss className={cn("checkbox", { checked })}>
+
+      {/* 체크하는 함수 적용하기 */}
+
+      <CheckboxCss
+        className={cn("checkbox", { checked })}
+        onClick={() => onToggle(id)}
+      >
         {/* 체크박스의 상태를 표시하는 checked 변수를 기준으로, 조건이 true: GrCheckboxSelected 사용
         조건이 false :GrCheckbox 사용 */}
 
@@ -121,4 +127,5 @@ const TodoListItem = ({ todo, onRemove }) => {
   );
 };
 
-export default TodoListItem;
+//맨 마지막에서, 디폴트 부분 React.memo 적용해서, 1차 성능 개선 확인
+export default React.memo(TodoListItem);

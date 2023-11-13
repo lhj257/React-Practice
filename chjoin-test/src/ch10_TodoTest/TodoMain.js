@@ -18,19 +18,39 @@ const Main_css = styled.div`
 `;
 
 const TodoMain = () => {
-  //샘플 더미 데이터를 임시 배영레 만들어서, 전달. props 테스트
-  const [todos, setTodos] = useState([
-    { id: 1, text: "더미 데이터 요소 1번 입니다.", checked: true },
-    { id: 2, text: "더미 데이터 요소 2번 입니다.", checked: false },
-    { id: 3, text: "더미 데이터 요소 3번 입니다.", checked: true },
-  ]);
+  //문제점 제시, 더미 데이터 약 3000개로 추가 하고, 느려지는 부분 만든 후, 확인, 적용해보기.
+
+  const createBulkTodos = () => {
+    const array = [];
+    for (let i = 1; i <= 10000; i++) {
+      array.push({
+        id: i,
+        text: `더미 데이터 : ${i}`,
+        checked: false,
+      });
+    }
+    return array;
+  };
+
+  //createBulkTodos() 의 결과 배열 -> todos 의 초깃값으로 설정.
+  const [todos, setTodos] = useState(createBulkTodos());
+
+  // 샘플 더미 데이터를 임시 배영레 만들어서, 전달. props 테스트
+  // const [todos, setTodos] = useState([
+  //   { id: 1, text: "더미 데이터 요소 1번 입니다.", checked: true },
+  //   { id: 2, text: "더미 데이터 요소 2번 입니다.", checked: false },
+  //   { id: 3, text: "더미 데이터 요소 3번 입니다.", checked: true },
+  // ]);
 
   //추가로 입력이 되는 todo 부분의 아이디를 id:4 부터 할당 할 예정
-  const nextId = useRef(4);
+  // const nextId = useRef(4);
+
+  //3000개 더미 데이터라서, 다음 번호
+  const nextId = useRef(10001);
 
   //TodoMain -> TodoInsert 자식 컴포넌트에게 , props 로 함수를 전달하기.
   // onInsert 라는 함수는, onChange 함수와는 다르게,
-  // 매번 새로운 함수를 생성함. 이유는 함수 안에 갑ㄳ이, 배열이 변경이 되어서,
+  // 매번 새로운 함수를 생성함. 이유는 함수 안에 값이, 배열이 변경이 되어서,
   // todos  배열의 변경에 따라서, 동작하게 만들기.
   const onInsert = useCallback(
     (text) => {
@@ -60,6 +80,21 @@ const TodoMain = () => {
     [todos]
   );
 
+  //토글(스위치, on/off), checkbox 부분에, 이벤트 핸들러 추가하기.
+  // onToggle 이라는 이름. 함수를 자식 컴포넌트에게 전달하기.
+  // 순서1, 설정
+  const onToggle = useCallback(
+    (id) => {
+      setTodos(
+        //선택된 todo의 id가 일치하면, 기존 배열을 복사해서, 선택된 id의 속성 checked 부분 변경시키기
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo
+        )
+      );
+    },
+    [todos]
+  );
+
   return (
     <Main_css>
       {/* Todo 만들기 준비 메인 <AiFillRead /> */}
@@ -68,7 +103,8 @@ const TodoMain = () => {
         <TodoInsert onInsert={onInsert} />
         {/* 위에서 만든 임시 데이터 배열을 전달 : props 속성으로 전달 */}
         {/* 제거하는 함수를 props를 이용해서, 전달 */}
-        <TodoList todos={todos} onRemove={onRemove} />
+        {/* 순서2, 적용하기. 체크하는 함수를 props를 이용해서, 전달 */}
+        <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} />
       </TodoBase>
     </Main_css>
   );
