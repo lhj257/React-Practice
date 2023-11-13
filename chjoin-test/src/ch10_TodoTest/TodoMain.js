@@ -8,6 +8,7 @@ import styled from "styled-components";
 import { AiFillRead } from "react-icons/ai";
 import TodoBase from "./TodoBase";
 import TodoInsert from "./TodoInsert";
+import TodoListItem from "./TodoListItem";
 
 const Main_css = styled.div`
   margin: 0;
@@ -19,9 +20,10 @@ const Main_css = styled.div`
 const TodoMain = () => {
   return (
     <Main_css>
-      Todo 만들기 준비 메인 <AiFillRead />
+      {/* Todo 만들기 준비 메인 <AiFillRead /> */}
       <TodoBase>
         <TodoInsert />
+        <TodoListItem />
       </TodoBase>
     </Main_css>
   );
