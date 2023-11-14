@@ -26,6 +26,7 @@ import ImmerTest from "./ch12_immerTest/ImmerTest";
 import TestZone from "./ch12_immerTest/testZone";
 import ApiTest from "./ch13_API_PublicDataTest/ApiTest";
 import ApiTestKoreaNews from "./ch13_API_PublicDataTest/ApiTestKoreaNews";
+import MainNews from "./ch13_API_PublicDataTest/component/MainNews";
 
 function App() {
   return (
@@ -60,6 +61,7 @@ function App() {
         <Route path="immerTestZone" element={<TestZone />} />
         <Route path="APITest" element={<ApiTest />} />
         <Route path="apiTest2" element={<ApiTestKoreaNews />} />
+        <Route path="apiTest3" element={<MainNews />} />
       </Routes>
     </BrowserRouter>
   );
