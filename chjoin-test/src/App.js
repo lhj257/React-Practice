@@ -24,6 +24,7 @@ import StyledComponentsTest from "./ch9_component/StyledComponentsTest";
 import TodoMain from "./ch10_TodoTest/TodoMain";
 import ImmerTest from "./ch12_immerTest/ImmerTest";
 import TestZone from "./ch12_immerTest/testZone";
+import ApiTest from "./ch13_API_PublicDataTest/ApiTest";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Route path="todomain" element={<TodoMain />} />
         <Route path="immerTest" element={<ImmerTest />} />
         <Route path="immerTestZone" element={<TestZone />} />
+        <Route path="APITest" element={<ApiTest />} />
       </Routes>
     </BrowserRouter>
   );
