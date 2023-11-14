@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // 카테고리 목록, 보이는 건 한글, 값은 영어로 할당.
 const categories = [
@@ -35,16 +35,37 @@ const CategoriesCss = styled.div`
     color: red;
   }
 
+  //active 클래스 속성 추가.
+  ${(props) =>
+    props.active &&
+    css`
+      font-weight: 600;
+      border-bottom: 2px solid violet;
+      color: aqua;
+      &:hover {
+        color: green;
+      }
+    `}
+
   & + & {
     margin-left: 1rem;
   }
 `;
 
-const Categories = () => {
+{
+  /* <Categories category={category} onSelect={onSelect} /> */
+}
+const Categories = ({ category, onSelect }) => {
   return (
     <CategoriesBlockCss>
       {categories.map((c) => {
-        <CategoriesCss key={c.text}>{c.text}</CategoriesCss>;
+        <CategoriesCss
+          key={c.text}
+          active={category === c.name}
+          onClick={() => onSelect(c.name)}
+        >
+          {c.text}
+        </CategoriesCss>;
       })}
     </CategoriesBlockCss>
   );

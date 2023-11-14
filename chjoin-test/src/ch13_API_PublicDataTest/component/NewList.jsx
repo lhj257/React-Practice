@@ -27,7 +27,8 @@ const sampleArticle = {
   urlToImage: "https://via.placeholder.com/160",
 };
 
-const NewList = () => {
+/* <NewList category={category} /> */
+const NewList = ({ category }) => {
   //useEffect 이용해서, 마운트시, 최초1회 데이터 받아오기.
   //create, update, delete 없어서,
   // 단순, 데이터만 가져오기 때문에,
@@ -42,8 +43,10 @@ const NewList = () => {
     const resultData = async () => {
       setLoading(true);
       try {
+        //카테고리별로, url 주소 변경하기.
+        const query = category === "all" ? "" : `&category=${category}`;
         const response = await axios.get(
-          "https://newsapi.org/v2/top-headlines?country=kr&category=business&apiKey=b7adb4f936494b3bac62f446ab7686cb"
+          `https://newsapi.org/v2/top-headlines?country=kr&{query}=business&apiKey=b7adb4f936494b3bac62f446ab7686cb`
         );
         // console.log(response.data);
         //해당 주소를 입력해서, 모델링 조사할 때, 이미 구조를 다 봤음.
@@ -55,7 +58,8 @@ const NewList = () => {
     }; //resultData async 함수 블럭 끝부분,
     //비동기 함수 만들어서, 사용하기.
     resultData();
-  }, []); //의존성 배열 부분의 모양은 빈배열, 최초 1회 마운트시 한번만 호출.
+    //category의 값에 따라서 새로운 함수를 생성함.
+  }, [category]); //의존성 배열 부분의 모양은 빈배열, 최초 1회 마운트시 한번만 호출.
 
   //주의사항, 데이터 널 체크하기.
   if (loading) {

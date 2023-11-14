@@ -293,6 +293,16 @@ const Main = () => {
           >
             apiTest3 확인
           </Button>
+          <br />
+          <Button
+            title="newsPageTest/:category "
+            type="primary"
+            onClick={() => {
+              navigate("/newsPageTest/:category");
+            }}
+          >
+            newsPageTest/:category 확인
+          </Button>
         </Container>
       </div>
     </Wrapper>
