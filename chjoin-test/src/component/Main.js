@@ -253,6 +253,16 @@ const Main = () => {
           >
             immerTest, 불변성 쉽게 유지
           </Button>
+          <br />
+          <Button
+            title="immerTestZone "
+            type="primary"
+            onClick={() => {
+              navigate("/immerTestZone");
+            }}
+          >
+            immerTestZone, 불변성 쉽게 유지
+          </Button>
         </Container>
       </div>
     </Wrapper>
