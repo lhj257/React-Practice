@@ -8,6 +8,8 @@ body {
   margin: 0;
   padding: 0;
   background: #e9ecef;
+  background-image: url("https://cdn.pixabay.com/animation/2023/10/03/03/36/03-36-43-334_512.gif");
+  background-size: contain;
 }
 
 code {

@@ -13,7 +13,7 @@ const NewsPage = () => {
   return (
     <div>
       {/* 기존에 MainNews 에서 전달하는 방식과 조금 다름.
-      여기서는 NavLink 이용해서  */}
+      여기서는 NavLink 이용해서 전달하기 */}
       <Categories />
       <NewList category={category} />
     </div>
