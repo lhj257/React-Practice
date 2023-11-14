@@ -243,6 +243,16 @@ const Main = () => {
           >
             todomain 미니프로젝트
           </Button>
+          <br />
+          <Button
+            title="immerTest "
+            type="primary"
+            onClick={() => {
+              navigate("/immerTest");
+            }}
+          >
+            immerTest, 불변성 쉽게 유지
+          </Button>
         </Container>
       </div>
     </Wrapper>
