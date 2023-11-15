@@ -303,6 +303,16 @@ const Main = () => {
           >
             newsPageTest/:category 확인
           </Button>
+          <br />
+          <Button
+            title="contextAPITest "
+            type="primary"
+            onClick={() => {
+              navigate("/contextAPITest");
+            }}
+          >
+            contextAPITest 확인
+          </Button>
         </Container>
       </div>
     </Wrapper>
