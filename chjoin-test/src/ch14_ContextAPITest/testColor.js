@@ -40,6 +40,7 @@ const ColorProvider = ({ children }) => {
   );
 };
 
+//ColorConsumer : 게터, 이용하는 쪽 역할이 비슷.
 const { Consumer: ColorConsumer } = ColorContext;
 // 추가
 //  ColorProvider: 세터, ColorConsumer: 게터
