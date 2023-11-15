@@ -57,6 +57,8 @@ const CategoriesBlockCss = styled.div`
 // `;
 
 // NavLink 방식. 변경.
+// 기존에 styled.태그명`속성`
+// 컴포넌트 적용 styled(컴포넌트)`속성`
 const CategoriesCss = styled(NavLink)`
   font-size: 1.5rem;
   cursor: pointer;
