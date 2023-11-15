@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
-import PublicItem from "./model/PublicItem";
-import { axios } from "axios";
+import PublicItem from "../model/PublicItem";
+import  axios from "axios";
 
 const PublicListCss = styled.div`
   box-sizing: border-box;
@@ -26,7 +26,7 @@ const PublicList = () => {
       const response = await axios.get(
         `https://apis.data.go.kr/6260000/AttractionService/getAttractionKr?serviceKey=FhLu0%2F9FVeU1RMq%2FoajQdjme1LlZsfUQYaEgqgcWjfK%2FsY0Yn00ssKDemrH%2FgCtmtRFsKwQ0hDdsJrSWNVaf2w%3D%3D&pageNo=1&numOfRows=10&resultType=json`
       );
-      setArticles(response.data.getFoodKr.item);
+      setArticles(response.data.articles);
     };
     resultData();
   }, []);
