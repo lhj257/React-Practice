@@ -11,6 +11,8 @@ const categories = [
   { name: "science", text: "과학" },
   { name: "sports", text: "스포츠" },
   { name: "technology", text: "기술" },
+  { name: "busanFood", text: "부산테마먹거리" },
+  { name: "busanWalking", text: "부산도보여행" },
 ];
 // css
 const CategoriesBlockCss = styled.div`
