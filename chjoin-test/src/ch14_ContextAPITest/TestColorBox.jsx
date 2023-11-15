@@ -9,7 +9,7 @@ const TestColorBox = () => {
     <div>
       {/* Consumer 속성 이용해서 */}
       <ColorContext.Consumer>
-        {/* 값 가져오기 */}
+        {/* 값 가져오기  children 부분에 값의 형태가 아니라 함수 형태로  사용중. child as Function*/}
         {(value) => (
           <div
             style={{
