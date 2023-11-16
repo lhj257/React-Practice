@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import PublicItem from "../model/PublicItem";
-import  axios from "axios";
+import axios from "axios";
 
 const PublicListCss = styled.div`
   box-sizing: border-box;
@@ -16,20 +16,25 @@ const PublicListCss = styled.div`
   }
 `;
 
-const PublicList = () => {
+const PublicList = ({ category }) => {
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const resultData = async () => {
       setLoading(true);
-      const response = await axios.get(
-        `https://apis.data.go.kr/6260000/AttractionService/getAttractionKr?serviceKey=FhLu0%2F9FVeU1RMq%2FoajQdjme1LlZsfUQYaEgqgcWjfK%2FsY0Yn00ssKDemrH%2FgCtmtRFsKwQ0hDdsJrSWNVaf2w%3D%3D&pageNo=1&numOfRows=10&resultType=json`
-      );
-      setArticles(response.data.articles);
+      try {
+        const response = await axios.get(
+          `https://apis.data.go.kr/6260000/AttractionService/getAttractionKr?serviceKey=FhLu0%2F9FVeU1RMq%2FoajQdjme1LlZsfUQYaEgqgcWjfK%2FsY0Yn00ssKDemrH%2FgCtmtRFsKwQ0hDdsJrSWNVaf2w%3D%3D&pageNo=1&numOfRows=10&resultType=json`
+        );
+        setArticles(response.data.articles);
+      } catch (e) {
+        console.log(e);
+      }
+      setLoading(false);
     };
     resultData();
-  }, []);
+  }, [category]);
 
   if (loading) {
     return <PublicListCss>데이터 받는중(대기중 ....)</PublicListCss>;

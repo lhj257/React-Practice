@@ -109,7 +109,7 @@ const CategoriesCss = styled(NavLink)`
 // };
 
 // NavLink 방식. 변경.
-const Categories = ({ category, onSelect }) => {
+const Categories = () => {
   return (
     <CategoriesBlockCss>
       {categories.map((c) => (

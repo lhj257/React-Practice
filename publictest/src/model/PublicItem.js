@@ -69,7 +69,9 @@ const PublicItem = ({ article }) => {
         <p>교통정보 : {TRFC_INFO}</p>
         <p>운영 및 시간 : {USAGE_DAY_WEEK_AND_TIME}</p>
         <p>주소 : {ADDR1}</p>
-        <p>홈페이지 : {HOMEPAGE_URL}</p>
+        <a href={HOMEPAGE_URL} target="_blank" rel="noopener noreferrer">
+          <p>홈페이지 : {HOMEPAGE_URL}</p>
+        </a>
         <p>{ITEMCNTNTS}</p>
       </div>
     </PublicItemCss>
