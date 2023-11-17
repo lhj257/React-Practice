@@ -30,6 +30,7 @@ import MainNews from "./ch13_API_PublicDataTest/component/MainNews";
 import NewsPage from "./ch13_API_PublicDataTest/page/NewsPage";
 import TestColorBox from "./ch14_ContextAPITest/TestColorBox";
 import TestColorMain from "./ch14_ContextAPITest/TestColorMain";
+import FireMain from "./ch15_FirebaseTest/FireMain";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
         {/* <Route path="apiTest3" element={<MainNews />} /> */}
         <Route path="newsPageTest/:category" element={<NewsPage />} />
         <Route path="contextAPITest" element={<TestColorMain />} />
+        <Route path="firebaseTest" element={<FireMain />} />
       </Routes>
     </BrowserRouter>
   );

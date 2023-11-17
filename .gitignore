@@ -25,3 +25,4 @@ hello/node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+chjoin-test/src/ch15_FirebaseTest/FirebaseConfig.js
