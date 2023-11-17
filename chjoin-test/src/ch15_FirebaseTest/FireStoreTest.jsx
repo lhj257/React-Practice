@@ -15,7 +15,16 @@ import { db } from "./FirebaseConfig";
 
 // 공식 문서 샘플 코드를 그대로 가져온 경우
 //https://firebase.google.com/docs/firestore/manage-data/add-data?hl=ko
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  getDoc,
+  collection,
+  addDoc,
+  Timestamp,
+  updateDoc,
+  deleteDoc,
+} from "firebase/firestore";
 import { Button } from "antd";
 
 // Add a new document in collection "cities"
@@ -55,6 +64,39 @@ const FireStoreTest = () => {
   //임포트 상위에 있어야함
   // import { doc, getDoc } from "firebase/firestore";
 
+  //문서 아이디 자동으로 하는 addDoc
+  // import { collection, addDoc } from "firebase/firestore";
+
+  // Add a new document with a generated id.
+  const testAddDoc = async () => {
+    const docRef = await addDoc(collection(db, "cities"), {
+      name: "Tokyo",
+      country: "Japan",
+      regDate: Timestamp.fromDate(new Date()),
+    });
+    console.log("Document written with ID: ", docRef.id);
+  };
+
+  //update
+  // import { doc, updateDoc } from "firebase/firestore";
+
+  const testUpdateDoc = async () => {
+    const LARef = doc(db, "cities", "LA");
+
+    // Set the "capital" field of the city 'DC'
+    await updateDoc(LARef, {
+      capital: false,
+      name: "lhj",
+      regDate: Timestamp.fromDate(new Date()),
+    });
+  };
+
+  //delete
+  // import { doc, deleteDoc } from "firebase/firestore";
+  const testDeleteDoc = async () => {
+    await deleteDoc(doc(db, "cities", "LA"));
+  };
+
   return (
     <div>
       <Button type="primary" onClick={() => testSetDoc()}>
@@ -63,6 +105,18 @@ const FireStoreTest = () => {
       &nbsp; &nbsp;
       <Button type="primary" onClick={() => testGetDoc()}>
         Test getDoc
+      </Button>
+      &nbsp; &nbsp;
+      <Button type="primary" onClick={() => testAddDoc()}>
+        Test addDoc
+      </Button>
+      &nbsp; &nbsp;
+      <Button type="primary" onClick={() => testUpdateDoc()}>
+        Test updateDoc
+      </Button>
+      &nbsp; &nbsp;
+      <Button type="primary" onClick={() => testDeleteDoc()}>
+        Test deleteDoc
       </Button>
     </div>
   );
